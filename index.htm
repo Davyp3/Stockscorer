@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)file:///C:/Users/IAN/Desktop/Desktop/NSE2%20(72).htm -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>
+</title>
+<style>
+html {
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background: #70bg32;
+    background-repeat:no-repeat;
+    background: -webkit-linear-gradient( blue, white);
+    background: -moz-linear-gradient(  blue, white);
+    background: -ms-linear-gradient(  blue, white );
+    background: -o-linear-gradient(  blue, white);
+    background: linear-gradient(  blue, white);
+}
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+<div style="position :absolute;left:50px;top:50px;width:260px;height:500px;border-style: solid; border-color: #ffffff;padding-left:50px;">
+<p style="font-size:30px;text-decoration:underline;color:#ffffff;">IDM STOCK EVALUATOR</p>
+<p style="color:#ffffff;">Just fill in the boxes and click on "Score".</p>
+<p style="color:#ffffff;">Click on "Print" if you want a copy.</p>
+<p style="font-size:20px;color:#ffffff">---------------------------------</p>
+<p style="font-size:20px;color:#ffffff">Some advertising here</p>
+</div>
+<div style="position:absolute;top:40px;left:1000px;width:50px;line-height: .5;text-align: center;">
+<p style="font-size:30px;color:#ffffff">I</p>
+<p style="font-size:30px;color:#ffffff">N</p>
+<p style="font-size:30px;color:#ffffff">F</p>
+<p style="font-size:30px;color:#ffffff">O</p>
+<p style="font-size:30px;color:#ffffff">R</p>
+<p style="font-size:30px;color:#ffffff">M</p>
+<p style="font-size:30px;color:#ffffff">U</p>
+<p style="font-size:30px;color:#ffffff">S</p>
+<p style="font-size:30px;color:#ffffff">INC.</p>
+
+</div>
+<div style="position :absolute;left:1070px;top:50px;width:200px;height:500px;border-style: solid; border-color: #ffffff;padding-left:50px;">
+<p style="font-size:20px;color:#ffffff">Some advertising here</p>
+</div>
+
+<div style="position:absolute;left:400px;top:50px;width:500px; padding-left: 80px;padding-top:20px;padding-bottom:20px;background-color:#cfcfe8;">
+
+Enter Stock Name or Ticker_______<input type="text"><br><br>
+Current price of stock:___________  <input type="number" name="cp" id="cp" placeholder="No $ sign"><nobr id="cps">Score5</nobr><br><br>
+ Price 4 years ago:_______________  <input type="number" name="op" id="op" placeholder="No $ sign"><nobr id="ops">Score5</nobr><br><br>
+<nobr>Price/Comparison:____________________________________</nobr><nobr id="pcs">Score2</nobr><br><br>
+ Book value:___________________  <input type="number" name="bv" id="bv" placeholder="No $ sign"><nobr id="bvs">Score4</nobr><br><br>
+<nobr>Book valuePrice Comparison:___________________________</nobr><nobr id="bps">Score1</nobr><br><br>
+ No. analysts rating a Buy:________  <input type="number" name="bu" id="bu"><nobr id="bus">Score0</nobr><br><br>
+ No. of analysts rating a Strong Buy:  <input type="number" name="sb" id="sb"><nobr id="sbs">Score0</nobr><br><br>
+ Yield %:______________________ <input type="number" name="yd" id="yd"><nobr id="yds">Score8</nobr><br><br>
+ Operating margin %:____________  <input type="number" name="om" id="om"><nobr id="oms">Score10</nobr><br><br>
+ Daily volume traded:____________  <input type="number" name="dv" id="dv" placeholder="No commas"><nobr id="dvs">Score5</nobr><br><br>
+ Price/Earnings:_________________  <input type="number" name="pe" id="pe"><nobr id="pes">Score8</nobr><br><br>
+<nobr>Overall Rating_________________________________</nobr><button onclick="score(document.getElementById(&#39;cp&#39;).value,document.getElementById(&#39;op&#39;).value,document.getElementById(&#39;bv&#39;).value,document.getElementById(&#39;bu&#39;).value,document.getElementById(&#39;sb&#39;).value,document.getElementById(&#39;yd&#39;).value,document.getElementById(&#39;om&#39;).value,document.getElementById(&#39;dv&#39;).value,document.getElementById(&#39;pe&#39;).value)">Score</button><nobr style="font-size:20px;" id="oas">Score48</nobr><br><br>
+<nobr>Print________________</nobr><button onclick="printpage()">Print</button>
+</div>
+
+
+
+<script>
+
+function score(cp,op,bv,bu,sb,yd,om,dv,pe) {
+
+if (cp < 1.00 ) {
+    var cps =1;
+     }else
+if (cp < 2.00 ) {
+    var  cps =2;
+     }else
+if (cp < 5.00 ) {
+    var  cps =3;
+     }else
+if (cp < 10.00 ) {
+    var  cps =4;
+     }else
+if (cp < 15.00 ) {
+    var  cps =5;
+     }else
+if (cp < 20.00 ) {
+    var  cps =6;
+     }else
+if (cp < 30.00 ) {
+    var  cps =7;
+     }else
+if (cp < 50.00 ) {
+    var  cps =8;
+     }else
+if (cp < 100.00 ) {
+    var  cps =9;
+     }else
+ {
+    var  cps =10;
+     }
+{  document.getElementById("cps").innerHTML ="Score" +  cps;
+
+}
+
+if (op < 1.00 ) {
+    var ops =1;
+     }else
+if (op < 2.00 ) {
+    var  ops =2;
+     }else
+if (op < 5.00 ) {
+    var  ops =3;
+     }else
+if (op < 10.00 ) {
+    var  ops =4;
+     }else
+if (op < 15.00 ) {
+    var  ops =5;
+     }else
+if (op < 20.00 ) {
+    var  ops =6;
+     }else
+if (op < 30.00 ) {
+    var  ops =7;
+     }else
+if (op < 50.00 ) {
+    var  ops =8;
+     }else
+if (op < 100.00 ) {
+    var  ops =9;
+     }else
+ {
+    var  ops =10;
+     }
+
+
+{
+    document.getElementById("ops").innerHTML ="Score" +  ops;
+
+       }
+
+
+if  (op == 0 ) {
+      var  pcs =0;
+       }else
+if (cp < (.505*op )) {
+    var pcs =1;
+      }else
+if (cp < (.895*op )) {
+    var pcs =2;
+      }else
+if (cp < (.995*op )) {
+    var pcs =5;
+      }else
+if (cp > (.9949*op) && cp< (1.0149*op)) {
+    var pcs =6;
+      }else
+if (cp < (1.1049*op )) {
+    var pcs =7;
+      }else
+if (cp < (1.9949*op )) {
+    var pcs =9;
+      }else
+var  pcs =10;
+{
+    document.getElementById("pcs").innerHTML ="Score" +  pcs;
+
+       }
+
+
+
+if (bv < 1.00 ) {
+    var bvs =1;
+     }else
+if (bv < 2.00 ) {
+    var  bvs =2;
+     }else
+if (bv < 5.00 ) {
+    var  bvs =3;
+     }else
+if (bv < 10.00 ) {
+    var  bvs =4;
+     }else
+if (bv < 15.00 ) {
+    var  bvs =5;
+     }else
+if (bv < 20.00 ) {
+    var  bvs =6;
+     }else
+if (bv < 30.00 ) {
+    var  bvs =7;
+     }else
+if (bv < 50.00 ) {
+    var  bvs =8;
+     }else
+if (bv < 100.00 ) {
+    var  bvs =9;
+     }else
+ {
+    var  bvs =10;
+     }
+{
+    document.getElementById("bvs").innerHTML ="Score" +  bvs;
+}
+
+if (cp < (.4949*bv)) {
+    var bps =10;
+     }else
+if (cp < (.895*bv)) {
+    var bps =8;
+     }else
+if (cp < (.995* bv)) {
+    var bps =6;
+     }else
+if (cp < (1.0149*bv)) {
+    var bps =4;
+     }else
+if (cp < (1.0949*bv)) {
+    var bps =2;
+     }else
+if (cp < (1.4949*bv)) {
+    var bps =1;
+     }else
+{
+    var bps =0;
+      }
+{
+    document.getElementById("bps").innerHTML ="Score" +  bps;
+}
+if (bu < 1 ) {
+    var bus =0;
+     }else
+if (bu < 2 ) {
+    var  bus =2;
+     }else
+if (bu < 4 ) {
+    var  bus =3;
+     }else
+if (bu < 6 ) {
+    var  bus =4;
+     }else
+ {
+    var  bus =5;
+     }
+{
+    document.getElementById("bus").innerHTML ="Score" +  bus;
+}
+
+if (sb < 1 ) {
+    var sbs =0;
+     }else
+if (sb < 2 ) {
+    var  sbs =3;
+     }else
+if (sb < 5 ) {
+    var  sbs =4;
+     }else
+
+ {
+    var  sbs =5;
+     }
+{
+    document.getElementById("sbs").innerHTML ="Score" +  sbs;
+}
+
+if (yd ==0 ) {
+    var yds =0;
+     }else
+if (yd < 1.5 ) {
+    var  yds =1;
+     }else
+if (yd < 2.5 ) {
+    var  yds =4;
+     }else
+if (yd < 4.5 ) {
+    var  yds =6;
+     }else
+if (yd < 7.5 ) {
+    var  yds =8;
+     }else
+if (yd < 10.5 ) {
+    var  yds =10;
+     }else
+ {
+    var  yds =2;
+     }
+{
+    document.getElementById("yds").innerHTML ="Score" +  yds;
+}
+
+if (om < 1.49 ) {
+    var oms =0;
+     }else
+if (om <4.5 ) {
+    var  oms =1;
+     }else
+if (om < 9.5 ) {
+    var  oms =2;
+     }else
+if (om < 14.5 ) {
+    var  oms =3;
+     }else
+if (om < 19.5 ) {
+    var  oms =4;
+     }else
+if (om < 29.5 ) {
+    var  oms =5;
+     }else
+if (om < 49.5 ) {
+    var  oms =6;
+     }else
+if (om < 69.5 ) {
+    var  oms =8;
+     }else
+if (om < 79.5 ) {
+    var  oms =9;
+     }else
+ {
+    var  oms =10;
+     }
+{
+    document.getElementById("oms").innerHTML ="Score" +  oms;
+}
+
+if (dv < 10001 ) {
+    var dvs =0;
+     }else
+if (dv < 30001 ) {
+    var  dvs =1;
+     }else
+if (dv < 50001 ) {
+    var  dvs =2;
+     }else
+if (dv < 100001 ) {
+    var  dvs =3;
+     }else
+if (dv < 250001 ) {
+    var  dvs =4;
+     }else
+if (dv < 500001 ) {
+    var  dvs =5;
+     }else
+if (dv < 750001 ) {
+    var  dvs =6;
+     }else
+if (dv < 1000001 ) {
+    var  dvs =8;
+     }else
+if (dv < 2000001 ) {
+    var  dvs =9;
+     }else
+ {
+    var  dvs =10;
+     }
+{
+    document.getElementById("dvs").innerHTML ="Score" +  dvs;
+}
+
+if (pe < 1 ) {
+    var pes =0;
+     }else
+if (pe < 5.5 ) {
+    var  pes =10;
+     }else
+if (pe < 15.5 ) {
+    var  pes =9;
+     }else
+if (pe < 20.5 ) {
+    var  pes =8;
+     }else
+if (pe < 25.5 ) {
+    var  pes =7;
+     }else
+if (pe < 30.5 ) {
+    var  pes =6;
+     }else
+if (pe < 35.5 ) {
+    var  pes =5;
+     }else
+if (pe < 40.5 ) {
+    var  pes =4;
+     }else
+if (pe < 100 ) {
+    var  pes =2;
+     }else
+ {
+    var  pes =1;
+     }
+{
+    document.getElementById("pes").innerHTML ="Score" +  pes;
+}
+ { var sum=parseInt( cps + ops + pcs + bvs + bps + bus + sbs + yds + oms + dvs + pes);
+ document.getElementById("oas").innerHTML ="Score" + sum;
+ 
+}
+
+
+    }
+function printpage(){
+       window.print();
+    }
+
+</script>
+
+
+
+
+</body></html>
